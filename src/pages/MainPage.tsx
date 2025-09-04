@@ -19,11 +19,11 @@ const MainPage: React.FC = () => {
     let rekomendasi = "TIDAK DIREKOMENDASIKAN ❌";
 
     if (nilaiProyek === null 
-      && namaProgram === ""
-      && jenisProyek === ""
-      && durasi === ""
-      && risiko === ""
-      && penjamin === ""
+      || namaProgram === ""
+      || jenisProyek === ""
+      || durasi === ""
+      || risiko === ""
+      || penjamin === ""
     ) {
     setHasil("Mohon isi semua field terlebih dahulu");
     return;
@@ -195,11 +195,11 @@ const MainPage: React.FC = () => {
               <button
                 onClick={handleSimulasi}
                 className={`px-4 py-2 rounded lg1100:w-auto  ${
-                  hasil === "Mohon isi semua field terlebih dahulu"
+                  hasil === "TIDAK DIREKOMENDASIKAN ❌"
                     ? "bg-gray-400 text-gray-700 px-6 py-3 rounded  w-full lg1100:w-auto cursor-not-allowed"
                     : "bg-blue-600 text-white px-6 py-3 rounded hover:bg-blue-700 w-full lg1100:w-auto "
                 }`} 
-                disabled={hasil === "Mohon isi semua field terlebih dahulu"}            >
+                disabled={hasil === "TIDAK DIREKOMENDASIKAN ❌"}            >
                 Jalankan Simulasi
               </button>
             </div>
