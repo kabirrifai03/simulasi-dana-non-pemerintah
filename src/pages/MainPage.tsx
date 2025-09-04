@@ -41,7 +41,7 @@ const MainPage: React.FC = () => {
       return;
     } else if (
       jenisProyek === "fisik" &&
-      (durasi === "2-3" || durasi === ">3") &&
+      (durasi === "1" || durasi === ">3") &&
       risiko === "ada" &&
       penjamin === "tidak" &&
       (nilaiProyek ?? 0) > 10000000000
@@ -51,7 +51,17 @@ const MainPage: React.FC = () => {
       return;
     } else if (
       jenisProyek === "fisik" &&
-      (durasi === "1" || durasi === "2-3") &&
+      ( durasi === "2-3") &&
+      risiko === "ada" &&
+      penjamin === "tidak" &&
+      (nilaiProyek ?? 0) > 10000000000 || (nilaiProyek ?? 0) < 500000000000
+    ) {
+      rekomendasi = "Obligasi / Sukuk atau Pinjaman Daerah Direkomendasikan";
+      navigate("/obligasi-sukuk-pinjaman-daerah");
+      return;
+    } else if (
+      jenisProyek === "fisik" &&
+      (durasi === "1") &&
       risiko === "ada" &&
       penjamin === "tidak" &&
       (nilaiProyek ?? 0) < 500000000000

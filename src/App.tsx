@@ -29,6 +29,7 @@ import ObligasiRisiko from "./pages/ObligasiRisiko";
 import ObligasiKelayakanUmum from "./pages/ObligasiKelayakanUmum";
 import PinjamanDaerahRisiko from "./pages/PinjamanDaerahRisiko";
 import PinjamanDaerahKelayakanUmum from "./pages/PinjamanDaerahKelayakanUmum";
+import ObligasiSukukPinjamanDaerah from "./pages/ObligasiSukukPinjamanDaerah";
 
 
 function App() {
@@ -52,6 +53,7 @@ function App() {
           />
           <Route path="/pinjaman-daerah" element={<PinjamanDaerah />} />
           <Route path="/obligasi-sukuk" element={<ObligasiSukuk />} />
+          <Route path="/obligasi-sukuk-pinjaman-daerah" element={<ObligasiSukukPinjamanDaerah />} />
           <Route path="/kpbu" element={<KPBU />} />
           <Route path="/ziswaf-filantropi-csr" element={<ZiswafFilantropiCSR />} />
 ]         <Route path="/ziswaf-lanjutan" element={<ZiswafLanjutan />} />
