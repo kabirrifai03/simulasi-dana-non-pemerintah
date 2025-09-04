@@ -79,7 +79,7 @@ const MainPage: React.FC = () => {
 
       {/* Konten utama */}
       <div className="ml-0 lg1100:ml-64 flex-1 flex flex-col">
-        <Header name="Dashboard Simulasi" />
+        <Header name="Simulasi ini dapat menjadi Pedoman digital (awal) untuk mengetahui kriteria kelayakan pendanaan bersifat non pemerintah" />
 
         <main className="px-4 sm:px-6 py-6 space-y-6">
           <h2 className="text-lg sm:text-xl font-bold text-gray-800">

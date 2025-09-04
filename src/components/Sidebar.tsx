@@ -31,7 +31,7 @@ const Sidebar: React.FC = () => {
           <img
             src="https://i.imgur.com/LlEguS5.png"
             alt="SDNP Logo"
-            className="h-8"
+            className="h-12 mt-5"
           />
         </a>
       </div>
@@ -48,7 +48,7 @@ const Sidebar: React.FC = () => {
             <img
               src="https://i.imgur.com/LlEguS5.png"
               alt="SDNP Logo"
-              className="h-8"
+              className="h-12 mt-5"
             />
           </a>
         </div>
