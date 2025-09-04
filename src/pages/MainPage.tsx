@@ -16,14 +16,14 @@ const MainPage: React.FC = () => {
   const navigate = useNavigate();
 
   const handleSimulasi = () => {
-    let rekomendasi = "Mohon isi semua field terlebih dahulu";
+    let rekomendasi = "TIDAK DIREKOMENDASIKAN ❌";
 
     if (nilaiProyek === null 
       && namaProgram === ""
       && jenisProyek === ""
       && durasi === ""
-      && risiko === "tidak"
-      && penjamin === "tidak"
+      && risiko === ""
+      && penjamin === ""
     ) {
     setHasil("Mohon isi semua field terlebih dahulu");
     return;

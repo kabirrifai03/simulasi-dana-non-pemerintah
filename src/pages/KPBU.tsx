@@ -41,32 +41,49 @@ const KPBU: React.FC = () => {
          <h2 className="text-lg sm:text-xl font-bold">Screening General</h2>
           {/* Screening General */}
             <div className="bg-white p-4 sm:p-6 rounded-lg shadow space-y-4">
-              {/* NPV */}
-              <div>
-                <label className="block font-medium">NPV (Net Present Value)</label>
-                <input
-                  type="text"
-                  placeholder="Contoh: Rp1,000,000,000 atau -Rp500,000,000"
-                  value={npvRaw}
-                  onChange={(e) => {
-                    let raw = e.target.value;
-                    let cleaned = raw.replace(/[^0-9-]/g, "");
-                    if (cleaned === "") {
-                      setNpvRaw("");
-                      setNpv(null);
-                    } else {
-                      const num = Number(cleaned);
-                      const formatted =
-                        num < 0
-                          ? `-Rp${Math.abs(num).toLocaleString("id-ID")}`
-                          : `Rp${num.toLocaleString("id-ID")}`;
-                      setNpvRaw(formatted);
-                      setNpv(num);
-                    }
-                  }}
-                  className="w-full border p-2 rounded"
-                />
-              </div>
+            {/* NPV */}
+            <div>
+              <label className="block font-medium">NPV (Net Present Value)</label>
+              <input
+                type="text"
+                placeholder="Contoh: 1,000,000,000 atau -500,000,000"
+                value={npvRaw}
+                onChange={(e) => {
+                  let raw = e.target.value;
+
+                  // Hanya izinkan angka + optional minus di depan
+                  let cleaned = raw.replace(/[^\d-]/g, "");
+
+                  // Kalau ada lebih dari 1 minus, ambil hanya di depan
+                  if (cleaned.startsWith("-")) {
+                    cleaned = "-" + cleaned.slice(1).replace(/-/g, "");
+                  } else {
+                    cleaned = cleaned.replace(/-/g, "");
+                  }
+
+                  // Kalau kosong atau hanya "-", jangan parse ke number dulu
+                  if (cleaned === "" || cleaned === "-") {
+                    setNpvRaw(cleaned);
+                    setNpv(null);
+                    return;
+                  }
+
+                  // Parse number
+                  const num = Number(cleaned);
+
+                  // Format tampilan (dengan separator ribuan)
+                  const formatted =
+                    num < 0
+                      ? `-${Math.abs(num).toLocaleString("id-ID")}`
+                      : num.toLocaleString("id-ID");
+
+                  setNpvRaw(formatted);
+                  setNpv(num);
+                }}
+                className="w-full border p-2 rounded"
+              />
+            </div>
+
 
               <div>
                 <label className="block font-medium">Jumlah Serapan Pekerja</label>
