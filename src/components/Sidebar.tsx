@@ -1,6 +1,6 @@
 // src/components/Sidebar.tsx
 import React, { useState } from "react";
-import { FaFileAlt, FaSignOutAlt, FaBars } from "react-icons/fa";
+import {  FaBars, FaHome,  FaExclamationTriangle, FaCheckSquare } from "react-icons/fa";
 import { NavLink } from "react-router-dom";
 import Modal from "./Modal";
 import Button from "./Button";
@@ -9,7 +9,12 @@ const Sidebar: React.FC = () => {
   const [isLogoutModalOpen, setIsLogoutModalOpen] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
 
-  const menu = [{ name: "Dashboard", icon: <FaFileAlt />, to: "/" }];
+  const menu = [
+    { name: "Dashboard", icon: <FaHome />, to: "/" },
+    { name: "Simulasi Risiko", icon: <FaExclamationTriangle />, to: "/simulasi-risiko" },
+    { name: "Simulasi Kelayakan Umum", icon: <FaCheckSquare />, to: "/simulasi-kelayakan-umum" },
+  ];
+
 
   return (
     <>
@@ -21,11 +26,14 @@ const Sidebar: React.FC = () => {
         >
           <FaBars />
         </button>
-        <img
-          src="https://i.imgur.com/LlEguS5.png"
-          alt="SDNP Logo"
-          className="h-8"
-        />
+        {/* The clickable link that wraps the image */}
+        <a href="/">
+          <img
+            src="https://i.imgur.com/LlEguS5.png"
+            alt="SDNP Logo"
+            className="h-8"
+          />
+        </a>
       </div>
 
       {/* Sidebar */}
@@ -36,11 +44,13 @@ const Sidebar: React.FC = () => {
       >
         {/* Logo area */}
         <div className="flex items-center justify-center h-16 border-b">
-          <img
-            src="https://i.imgur.com/LlEguS5.png"
-            alt="SDNP Logo"
-            className="h-10"
-          />
+          <a href="/">
+            <img
+              src="https://i.imgur.com/LlEguS5.png"
+              alt="SDNP Logo"
+              className="h-8"
+            />
+          </a>
         </div>
 
         {/* Navigation */}
@@ -64,42 +74,9 @@ const Sidebar: React.FC = () => {
                 </NavLink>
               </li>
             ))}
-
-            {/* Logout Button */}
-            <li>
-              <button
-                onClick={() => setIsLogoutModalOpen(true)}
-                className="flex items-center gap-4 px-4 py-2 rounded-md font-medium text-red-600 hover:bg-red-50 transition-colors w-full text-left"
-              >
-                <span className="text-lg">
-                  <FaSignOutAlt />
-                </span>
-                <span>Logout</span>
-              </button>
-            </li>
           </ul>
         </nav>
       </aside>
-
-      {/* Modal Logout */}
-      <Modal
-        visible={isLogoutModalOpen}
-        onClose={() => setIsLogoutModalOpen(false)}
-      >
-        <div className="text-center p-4">
-          <h2 className="text-2xl font-bold text-gray-800 mb-4">
-            Konfirmasi Logout
-          </h2>
-          <p className="text-gray-600 mb-8">Apakah Anda yakin ingin keluar?</p>
-          <div className="flex justify-center gap-4">
-            <Button
-              onClick={() => setIsLogoutModalOpen(false)}
-              text="Tidak"
-              styleType="secondary"
-            />
-          </div>
-        </div>
-      </Modal>
     </>
   );
 };
