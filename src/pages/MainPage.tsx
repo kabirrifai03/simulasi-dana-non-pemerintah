@@ -70,8 +70,8 @@ const MainPage: React.FC = () => {
       navigate("/pinjaman-daerah");
       return;
     } else if (
-      (jenisProyek === "fisik" || jenisProyek === "nonfisik") &&
-      (durasi === "1" || durasi === ">3" || durasi === "2-3") &&
+      jenisProyek === "nonfisik" &&
+      (durasi === "1" || durasi === "2-3") &&
       risiko === "tidak" &&
       penjamin === "tidak" &&
       (nilaiProyek ?? 0) < 500000000000
@@ -80,7 +80,38 @@ const MainPage: React.FC = () => {
       navigate("/ziswaf-filantropi-csr");
       return;
     }
-
+    else if (
+      (jenisProyek === "fisik" || jenisProyek === "nonfisik") &&
+      (durasi === ">3") &&
+      risiko === "tidak" &&
+      penjamin === "tidak" 
+    ) {
+      rekomendasi = "CSR Direkomendasikan";
+      navigate("/csr-lanjutan");
+      return;
+    }
+    else if (
+      (jenisProyek === "fisik" || jenisProyek === "nonfisik") &&
+      (durasi === "1" || durasi === "2-3") &&
+      risiko === "tidak" &&
+      penjamin === "tidak" &&
+      (nilaiProyek ?? 0) >= 500000000000
+    ) {
+      rekomendasi = "Filantropi / CSR Direkomendasikan";
+      navigate("/filantropi-csr");
+      return;
+    }  
+    else if (
+      jenisProyek === "fisik" &&
+      (durasi === "1" || durasi === "2-3") &&
+      risiko === "tidak" &&
+      penjamin === "tidak" &&
+      (nilaiProyek ?? 0) < 500000000000
+    ) {
+      rekomendasi = "Filantropi / CSR Direkomendasikan";
+      navigate("/filantropi-csr");
+      return;
+    }
     setHasil(rekomendasi);
   };
 

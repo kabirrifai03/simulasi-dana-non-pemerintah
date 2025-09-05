@@ -30,7 +30,7 @@ import ObligasiKelayakanUmum from "./pages/ObligasiKelayakanUmum";
 import PinjamanDaerahRisiko from "./pages/PinjamanDaerahRisiko";
 import PinjamanDaerahKelayakanUmum from "./pages/PinjamanDaerahKelayakanUmum";
 import ObligasiSukukPinjamanDaerah from "./pages/ObligasiSukukPinjamanDaerah";
-
+import FilantropiCSR from "./pages/FilantropiCSR";
 
 function App() {
   return (
@@ -62,6 +62,8 @@ function App() {
           <Route path="/csr-lanjutan" element={<CSRLanjutan />} />
 ]         <Route path="/csr-risiko" element={<CSRRisiko />} />
 ]         <Route path="/csr-kelayakan-umum" element={<CSRKelayakanUmum />} />
+
+]         <Route path="/filantropi-csr" element={<FilantropiCSR />} />
 ]         <Route path="/filantropi-lanjutan" element={<FilantropiLanjutan />} />
 ]         <Route path="/filantropi-risiko" element={<FilantropiRisiko />} />
 ]         <Route path="/filantropi-kelayakan-umum" element={<FilantropiKelayakanUmum />} />

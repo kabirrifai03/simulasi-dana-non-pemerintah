@@ -12,38 +12,28 @@ interface RisikoItem {
 
 const risikoIndikator: RisikoItem[] = [
   {
-    kategori: "Kepatuhan Syariah",
-    bobot: 25,
+    kategori: "Kepatuhan Hukum dan Regulasi",
+    bobot: 10,
     max: 2,
     opsi: [
-      { label: "Tidak sesuai prinsip syariah", value: 0 },
-      { label: "Sebagian sesuai, ada catatan", value: 1 },
-      { label: "Sesuai fatwa DSN-MUI & syariah", value: 2 },
-    ],
-  },
-  {
-    kategori: "Legalitas & Regulasi",
-    bobot: 15,
-    max: 2,
-    opsi: [
-      { label: "Tidak terdaftar resmi", value: 0 },
+      { label: "Tidak terdaftar resmi dan dokumen tidak lengkap", value: 0 },
       { label: "Dokumen sebagian ada", value: 1 },
       { label: "Terdaftar resmi (BAZNAS/Kemenag/BWI/OJK)", value: 2 },
     ],
   },
   {
-    kategori: "Transparansi & Akuntabilitas",
-    bobot: 20,
+    kategori: "Reputasi dan Transparansi",
+    bobot: 25,
     max: 2,
     opsi: [
-      { label: "Tidak ada laporan keuangan", value: 0 },
-      { label: "Laporan ada tapi tidak diaudit", value: 1 },
-      { label: "Laporan audited & transparan", value: 2 },
+      { label: "Tidak ada laporan keuangan dan Reputasi buruk, pernah bermasalah", value: 0 },
+      { label: "Laporan ada tapi tidak diaudit serta Reputasi cukup, kredibilitas terbatas", value: 1 },
+      { label: "Laporan audited & transparan, Kredibilitas sangat baik (LAZ/UPZ/Nadzir terpercaya", value: 2 },
     ],
   },
   {
     kategori: "Keberlanjutan Program",
-    bobot: 15,
+    bobot: 30,
     max: 2,
     opsi: [
       { label: "Hanya sekali pakai", value: 0 },
@@ -53,22 +43,12 @@ const risikoIndikator: RisikoItem[] = [
   },
   {
     kategori: "Dampak Sosial-Ekonomi",
-    bobot: 15,
+    bobot: 35,
     max: 2,
     opsi: [
       { label: "Manfaat rendah/tidak jelas", value: 0 },
       { label: "Manfaat sedang untuk sebagian penerima", value: 1 },
       { label: "Dampak tinggi bagi mustahik/UMKM/petani kecil", value: 2 },
-    ],
-  },
-  {
-    kategori: "Reputasi Lembaga Pengelola",
-    bobot: 10,
-    max: 2,
-    opsi: [
-      { label: "Reputasi buruk, pernah bermasalah", value: 0 },
-      { label: "Reputasi cukup, kredibilitas terbatas", value: 1 },
-      { label: "Kredibilitas sangat baik (LAZ/UPZ/Nadzir terpercaya)", value: 2 },
     ],
   },
 ];
