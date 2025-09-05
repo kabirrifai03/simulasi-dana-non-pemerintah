@@ -54,7 +54,7 @@ const MainPage: React.FC = () => {
       ( durasi === "2-3") &&
       risiko === "ada" &&
       penjamin === "tidak" &&
-      (nilaiProyek ?? 0) > 10000000000 || (nilaiProyek ?? 0) < 500000000000
+      ((nilaiProyek ?? 0) > 10000000000 && (nilaiProyek ?? 0) < 500000000000)
     ) {
       rekomendasi = "Obligasi / Sukuk atau Pinjaman Daerah Direkomendasikan";
       navigate("/obligasi-sukuk-pinjaman-daerah");
@@ -71,6 +71,7 @@ const MainPage: React.FC = () => {
       return;
     } else if (
       (jenisProyek === "fisik" || jenisProyek === "nonfisik") &&
+      (durasi === "1" || durasi === ">3" || durasi === "2-3") &&
       risiko === "tidak" &&
       penjamin === "tidak" &&
       (nilaiProyek ?? 0) < 500000000000
