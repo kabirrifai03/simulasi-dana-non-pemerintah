@@ -18,7 +18,7 @@ const risikoIndikator: RisikoItem[] = [
     opsi: [
       { label: "Tidak terdaftar resmi dan dokumen tidak lengkap", value: 0 },
       { label: "Dokumen sebagian ada", value: 1 },
-      { label: "Terdaftar resmi", value: 2 },
+      { label: "Terdaftar resmi (BAZNAS/Kemenag/BWI/OJK)", value: 2 },
     ],
   },
   {
@@ -28,7 +28,7 @@ const risikoIndikator: RisikoItem[] = [
     opsi: [
       { label: "Tidak ada laporan keuangan dan Reputasi buruk, pernah bermasalah", value: 0 },
       { label: "Laporan ada tapi tidak diaudit serta Reputasi cukup, kredibilitas terbatas", value: 1 },
-      { label: "Laporan audited & transparan, Kredibilitas sangat baik", value: 2 },
+      { label: "Laporan audited & transparan, Kredibilitas sangat baik (LAZ/UPZ/Nadzir terpercaya", value: 2 },
     ],
   },
   {
