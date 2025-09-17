@@ -74,7 +74,7 @@ const SimulasiKelayakanEkonomis: React.FC = () => {
 
         <main className="px-4 sm:px-6 py-6 space-y-6">
           <h2 className="text-lg sm:text-xl font-bold">
-            Fitur A: Cek Status Ekonomis
+            Simulasi Kelayakan Ekonomis
           </h2>
 
           <div className="bg-white p-4 sm:p-6 rounded-lg shadow space-y-4">
