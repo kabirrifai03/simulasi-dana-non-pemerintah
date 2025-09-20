@@ -1,6 +1,6 @@
 // src/components/Sidebar.tsx
 import React, { useState } from "react";
-import {  FaBars, FaHome,  FaExclamationTriangle, FaCheckSquare, FaWallet } from "react-icons/fa";
+import {  FaBars, FaHome,  FaExclamationTriangle, FaCheckSquare, FaWallet, FaCalculator } from "react-icons/fa";
 import { NavLink } from "react-router-dom";
 import Modal from "./Modal";
 import Button from "./Button";
@@ -14,7 +14,7 @@ const Sidebar: React.FC = () => {
     { name: "Simulasi Risiko", icon: <FaExclamationTriangle />, to: "/simulasi-risiko" },
     { name: "Simulasi Kelayakan Umum", icon: <FaCheckSquare />, to: "/simulasi-kelayakan-umum" },
     { name: "Simulasi Kelayakan Ekonomis", icon: <FaWallet />, to: "/SimulasiKelayakanEkonomis" },
-
+    { name: "Simulasi Hitung Dampak Sosial", icon: <FaCalculator />, to: "/SimulasiDampakSosial" },
 
     
   ];
@@ -23,7 +23,7 @@ const Sidebar: React.FC = () => {
   return (
     <>
     {/* Top bar for mobile (<1100px) */}
-    <div className="lg1100:hidden flex items-center justify-between bg-white border-b px-4 py-2 shadow fixed top-0 left-0 right-0 z-20">
+    <div className="lg1100:hidden flex items-center justify-between bg-white border-b px-4 py-5 shadow fixed top-0 left-0 right-0 z-20">
       <button
         onClick={() => setIsOpen(!isOpen)}
         className="text-2xl text-gray-700 focus:outline-none"

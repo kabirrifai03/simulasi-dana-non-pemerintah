@@ -32,6 +32,8 @@ import PinjamanDaerahKelayakanUmum from "./pages/PinjamanDaerahKelayakanUmum";
 import ObligasiSukukPinjamanDaerah from "./pages/ObligasiSukukPinjamanDaerah";
 import FilantropiCSR from "./pages/FilantropiCSR";
 import SimulasiKelayakanEkonomis from "./pages/SimulasiKelayakanEkonomis";
+import SimulasiDampakSosial from "./pages/SimulasiDampakSosial";
+
 
 
 function App() {
@@ -89,6 +91,9 @@ function App() {
 
 
 ]         <Route path="/SimulasiKelayakanEkonomis" element={<SimulasiKelayakanEkonomis />} />
+
+]         <Route path="/SimulasiDampakSosial" element={<SimulasiDampakSosial />} />
+
 
 
         </Routes>
