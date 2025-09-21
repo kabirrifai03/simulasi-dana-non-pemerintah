@@ -174,7 +174,7 @@ const parseNumber = (value: string) => {
         {/* Sisa Pangan */}
         <div>
           <label className="block text-gray-700 font-medium">
-            Estimasi Sisa Pangan yang Dapat Diselamatkan
+            Estimasi Sisa dan Susut Pangan yang Diselamatkan
           </label>
           <p className="text-xs text-gray-500 mb-1">
             Format: angka dalam ton/ha (contoh: 12)
@@ -228,7 +228,7 @@ const parseNumber = (value: string) => {
         {/* Lumbung */}
         <div>
           <label className="block text-gray-700 font-medium">
-            Estimasi Muatan Lumbung Pangan
+            Estimasi Produksi Pangan Wilayah Surplus
           </label>
           <p className="text-xs text-gray-500 mb-1">
             Format: angka dalam ton (contoh: 7)
@@ -350,7 +350,7 @@ const parseNumber = (value: string) => {
         {/* Biaya Sampah */}
         <div>
           <label className="block text-gray-700 font-medium">
-            Biaya Angkut Sampah per Hari
+            Biaya Operasional Tipping Fee / Biaya Pembuangan  sampah ke TPA (Truk Dump) Bulanan
           </label>
           <p className="text-xs text-gray-500 mb-1">
             Format: harga Rp (contoh: Rp100.000)
