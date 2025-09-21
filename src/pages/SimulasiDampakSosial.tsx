@@ -128,7 +128,7 @@ const parseNumber = (value: string) => {
           type="text"
           inputMode="numeric" // biar keyboard angka di HP
           placeholder="150"
-          value={tenagaKerja ? formatNumber(tenagaKerja) : ""}
+          value={tenagaKerja === 0 ? "0" : formatNumber(tenagaKerja)}
           onChange={(e) => setTenagaKerja(parseNumber(e.target.value))}
           className="w-full border p-3 rounded"
         />
@@ -145,8 +145,8 @@ const parseNumber = (value: string) => {
         <input
           type="text"
           inputMode="numeric" // biar keyboard angka di HP
-            placeholder="50"
-          value={perempuan ? formatNumber(perempuan) : ""}
+          placeholder="50"
+          value={perempuan === 0 ? "0" : formatNumber(perempuan)}
           onChange={(e) => setPerempuan(parseNumber(e.target.value))}
           className="w-full border p-3 rounded"
         />
@@ -164,8 +164,8 @@ const parseNumber = (value: string) => {
         <input
           type="text"
           inputMode="numeric" // biar keyboard angka di HP
-            placeholder="30"
-          value={anakMuda ? formatNumber(anakMuda) : ""}
+          placeholder="30"
+          value={anakMuda === 0 ? "0" : formatNumber(anakMuda)}
           onChange={(e) => setAnakMuda(parseNumber(e.target.value))}
           className="w-full border p-3 rounded"
         />
@@ -183,7 +183,7 @@ const parseNumber = (value: string) => {
           type="text"
           inputMode="numeric" // biar keyboard angka di HP
             placeholder="12"
-          value={pangan ? formatNumber(pangan) : ""}
+          value={pangan === 0 ? "0" : formatNumber(pangan)}
           onChange={(e) => setPangan(parseNumber(e.target.value))}
           className="w-full border p-3 rounded"
         />
@@ -201,7 +201,7 @@ const parseNumber = (value: string) => {
           type="text"
           inputMode="numeric" // biar keyboard angka di HP
             placeholder="5000"
-          value={co2 ? formatNumber(co2) : ""}
+          value={co2 === 0 ? "0" : formatNumber(co2)}
           onChange={(e) => setCo2(parseNumber(e.target.value))}
           className="w-full border p-3 rounded"
         />
@@ -219,7 +219,7 @@ const parseNumber = (value: string) => {
           type="text"
           inputMode="numeric" // biar keyboard angka di HP
             placeholder="10"
-          value={lahan ? formatNumber(lahan) : ""}
+          value={lahan === 0 ? "0" : formatNumber(lahan)}
           onChange={(e) => setLahan(parseNumber(e.target.value))}
           className="w-full border p-3 rounded"
         />
@@ -237,7 +237,7 @@ const parseNumber = (value: string) => {
           type="text"
           inputMode="numeric" // biar keyboard angka di HP
             placeholder="7"
-          value={lumbung ? formatNumber(lumbung) : ""}
+          value={lumbung === 0 ? "0" : formatNumber(lumbung)}
           onChange={(e) => setLumbung(parseNumber(e.target.value))}
           className="w-full border p-3 rounded"
         />
